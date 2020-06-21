@@ -1,20 +1,21 @@
 import React from 'react'
-import 'font-awesome/css/font-awesome.css'
 import params from '../../params'
+import { FaCogs, FaSync } from 'react-icons/fa'
 export default function Header(props){
     return (
         <header style={styles.container}>
+            <span  style={{color: 'black', fontSize: 20}}> Nivel Dificuldade: { params.difficultLevel * 10 }</span>
             <div style={styles.difficultContainer}>
-                <button style={{padding:15}} onClick={props.onDifficultClick}>
-                    <i className="fa fa-lg fa-cogs"></i>
+                <button style={{padding:15, display: 'flex', alignItems: 'center', justifyContent: 'center'}} onClick={props.onDifficultClick}>
+                    <FaCogs size={15} style={{margin: 5}} />
                     Dificuldade
                 </button>
 
 
-                   <span  style={{color: 'black', fontSize: 20}}> Nivel Dificuldade: { params.difficultLevel * 10 }</span>
+                   
             </div>
-            <button style={{padding:15}}  onClick={props.onNewGame}>
-                <i className="fa fa-lg fa-sync"></i>
+            <button style={{padding:15, display: 'flex', alignItems: 'center', justifyContent: 'center'}}  onClick={props.onNewGame}>
+                <FaSync size={15} style={{margin: 5}} />
                 Novo Jogo
             </button>
         </header>
